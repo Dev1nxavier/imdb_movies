@@ -1,4 +1,5 @@
 const { ErrorOutline } = require('@material-ui/icons');
+const { runtime } = require('webpack');
 const db = require('./database');
 const ratingsRouter = require('express').Router();
 
@@ -40,7 +41,7 @@ const updateSavedMovie = async(vote='thumbs_up', id)=>{
 }
 
 //INSERT user-rated movies in db
-const saveUserMovies = async({title,imdb_id, omdb_id,thumbs_up, thumbs_down, imdb_rating = 0, poster_path}) =>{
+const saveUserMovies = async({title,imdb_id, omdb_id,thumbs_up, thumbs_down, imdb_rating = 0, poster_path, actors, director, summary, length}) =>{
 
     if(thumbs_up == true){
         thumbs_up = 1;
@@ -50,14 +51,14 @@ const saveUserMovies = async({title,imdb_id, omdb_id,thumbs_up, thumbs_down, imd
         thumbs_down = 1;
     }
 
-    console.log('in ratings.js/saveUserMovies db with data: ',imdb_id, omdb_id, thumbs_up, thumbs_down, imdb_rating, poster_path);
+    console.log('in ratings.js/saveUserMovies db with data: ',imdb_id, omdb_id, thumbs_up, thumbs_down, imdb_rating, poster_path, actors, director, summary, length);
 
     try {
 
         const {rows: [movie] } = await db.query(`
-        INSERT INTO ratings("title","imdb_id", "omdb_id", "thumbs_up", "thumbs_down", "imdb_rating", "tmdb_poster_path")
-        VALUES($1, $2, $3, $4, $5, $6, $7)
-        RETURNING *;`, [title, imdb_id ,omdb_id, thumbs_up, thumbs_down, imdb_rating, poster_path]);
+        INSERT INTO ratings("title","imdb_id", "omdb_id", "thumbs_up", "thumbs_down", "imdb_rating", "tmdb_poster_path", "actors", "director", "summary", "length")
+        VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+        RETURNING *;`, [title, imdb_id ,omdb_id, thumbs_up, thumbs_down, imdb_rating, poster_path, actors, director, summary, length]);
 
         console.log('Successfully saved new movie!');
 

@@ -29,7 +29,12 @@ const createTables = async()=>{
             thumbs_up INTEGER DEFAULT 0,
             thumbs_down INTEGER DEFAULT 0,
             imdb_rating NUMERIC,
-            tmdb_poster_path VARCHAR(255)
+            tmdb_poster_path VARCHAR(255),
+            actors VARCHAR(255),
+            director VARCHAR(255),
+            summary TEXT,
+            length INTEGER
+
         );`);
 
         console.log('Success!');

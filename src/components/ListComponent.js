@@ -56,9 +56,10 @@ const TableRowComponent = ({movie})=>{
 
     async function saveNewMovie(movie){
         try {
+            console.log('Getting movie details: ', movie);
 
             //fetch call for saving new movie
-            const saveMovie = await axios.post(`/api/save/${movie.id}`, {title: movie.title, id: movie.id ,imdb_id: movie.imdb_id, omdb_id: movie.id, thumbs_up: voteButton.thumbs_up, thumbs_down: voteButton.thumbs_down, imdb_rating: movie.vote_average, poster_path: movie.poster_path})
+            const saveMovie = await axios.post(`/api/save/${movie.id}`, {title: movie.title, id: movie.id ,imdb_id: movie.imdb_id, omdb_id: movie.id, thumbs_up: voteButton.thumbs_up, thumbs_down: voteButton.thumbs_down, imdb_rating: movie.vote_average, poster_path: movie.poster_path, actors: movie.actors, director: movie.director, summary: movie.overview, length: movie.runtime})
 
             console.log('savedMovie?', saveMovie);
 

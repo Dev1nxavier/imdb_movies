@@ -11,7 +11,7 @@ export const CardComponent = ({movie})=>{
 
     const cardStyles = makeStyles(theme=>({
         root:{
-            minWidth: 345,
+            maxWidth: 345,
             margin: '2em 2em',
         },
         media:{
@@ -22,7 +22,7 @@ export const CardComponent = ({movie})=>{
             display: 'flex',
             flexDirection: 'row',
             justifyContent: 'space-between',
-            alignContent: 'start'
+            alignContent: 'flex-start'
         },
         avatar:{
             backgroundColor: blue[500],
@@ -49,8 +49,6 @@ export const CardComponent = ({movie})=>{
         })
     }
 
-    console.log('Current vote state: ',vote);
-
     return (
 
         <Card className={classes.root}>
@@ -61,7 +59,7 @@ export const CardComponent = ({movie})=>{
             </Avatar>
           }
           title={movie.title}
-          subheader="Average User Rating"
+          subheader={`Runtime: ${movie.length}mins`}
         />
         <CardMedia
           className={classes.media}
@@ -69,7 +67,15 @@ export const CardComponent = ({movie})=>{
           title="Paella dish"
         />
         <CardContent>
-            
+        <Typography variant="subheader1" color="textPrimary" component= "p">
+          {`Actors: ${movie.actors}`}
+        </Typography>
+        <Typography variant="subheader1" color="textPrimary" component= "p">
+          {`Director: ${movie.director}`}
+        </Typography>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {movie.summary}
+        </Typography>
         </CardContent>
         <CardActions disableSpacing>
             <div className={classes.iconButtonDiv}>
