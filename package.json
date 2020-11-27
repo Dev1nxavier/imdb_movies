@@ -8,7 +8,7 @@
     "client": "webpack --watch",
     "server": "nodemon server/index.js",
     "seedDB" : "nodemon server/database/seed.js",
-    "build": "webpack --mode=\"production\""
+    "start": "webpack --mode=\"production\""
   },
   "keywords": [],
   "author": "",
