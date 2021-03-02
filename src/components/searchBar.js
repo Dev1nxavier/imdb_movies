@@ -43,7 +43,7 @@ const SearchBar = ({results, setResults, setSearchTerm, searchTerm}) =>{
 
     const tmb_API_URL = `https://api.themoviedb.org/3/search/movie?api_key=`;
 
-    const tmb_API_KEY = `43c7d7b6fa2e6c9635028bd8740b0cb2`;
+
 
     const tmb_POST_URL = `http://image.tmdb.org/t/p/w154/`;
 
