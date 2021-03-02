@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const MovieCards = ({movie, setSelectMovie, setOpen})=>{
 
-    const tmb_API_KEY = `43c7d7b6fa2e6c9635028bd8740b0cb2`;
+    const tmb_API_KEY = ``;
 
     const useStyles = makeStyles((theme)=>({
         root: {
