@@ -10,17 +10,18 @@ SETUP
 This project is deployed at: https://hidden-citadel-33635.herokuapp.com
 
 1. Install NPM
-2. Run npm i -y
-3. Install Postgres
-4. create new Postgres database named: imdbdb
-5. Create a .env file
-6. Sign up for API keys at: https://www.themoviedb.org/ AND https://rapidapi.com/amrelrafie/api/movies-tvshows-data-imdb/endpoints
-7. Save keys in .env file as API_SECRET_KEY = {rapidapi key here} AND tmb_API_KEY = {themoviedb key here}
-8. npm run client
-9. npm run seedDB
-10. Once seedDB runs, terminate (Ctrl-C)
-11. npm run start
-12. in Browser: go to localhost:3000 to view web app.
+2. Fork this repository
+3. Run npm i -y
+4. Install Postgres
+5. create new Postgres database named: imdbdb
+6. Create a .env file
+7. Sign up for API keys at: https://www.themoviedb.org/ AND https://rapidapi.com/amrelrafie/api/movies-tvshows-data-imdb/endpoints
+8. Save keys in .env file as API_SECRET_KEY = {rapidapi key here} AND tmb_API_KEY = {themoviedb key here}
+9. npm run client
+10. npm run seedDB
+11. Once seedDB runs, terminate (Ctrl-C)
+12. npm run start
+13. in Browser: go to localhost:3000 to view web app.
 
 HOW TO USE
 1. Enter movie title in top SearchBar. Results will be displayed in a list.
